@@ -13,11 +13,21 @@ from . import toolbar
 from . import mainView
 
 class CreateApp:
+	"""
+	CreateApp is where all pieces are put togethor to build the app
+	Methods:
+		__init__
+		createLayout
+	"""
 
 	def __init__(self):
 		self.createLayout()
 
 	def createLayout(self):
+		"""
+		createLayout sets the tabbar, main container, and toolbar(address bar is in toolbar)
+		inside the layout
+		"""
 		self.layout = QVBoxLayout()
 		self.layout.setSpacing(0)
 		self.layout.setContentsMargins(0, 0, 0, 0)

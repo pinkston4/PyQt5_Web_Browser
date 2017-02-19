@@ -10,6 +10,10 @@ from PyQt5.QtWebEngineWidgets import *
 from wb.app import CreateApp
 
 class App(QFrame):
+	"""
+	This is where the app is initialized
+	only one method and it is the __init__ method
+	"""
 
 	def __init__(self):
 		super().__init__()

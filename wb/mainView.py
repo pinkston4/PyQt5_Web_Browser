@@ -10,6 +10,9 @@ from PyQt5.QtWebEngineWidgets import *
 
 
 class Container:
+	"""
+	Container is the main display of the application
+	"""
 
 	def __init__(self):
 		self.container = QWidget()
