@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QWidget, QStackedLayout
 class Container:
     """
     Container is the main display of the application
+    Author: Jack Pinkston
     """
 
     def __init__(self):
