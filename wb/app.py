@@ -29,6 +29,7 @@ class CreateApp:
         self.back_button = QPushButton('<')
         self.forward_button = QPushButton('>')
         self.reload_button = QPushButton('Refresh')
+        self.addressbar_url = self.tabbar.tab.content.url().toString()
         self.create_layout()
 
     def create_layout(self):
@@ -50,7 +51,7 @@ class CreateApp:
         self.toolbar.toolbarLayout.addWidget(self.reload_button)
         self.container.container.layout.addWidget(self.tabbar.tab)
         self.container.container.layout.setCurrentWidget(self.tabbar.tab)
-        self.update_addressbar_url()
+        self.tabbar.tab.content.loadFinished.connect(self.update_addressbar_url)
 
     def go_back(self):
         """
@@ -58,7 +59,7 @@ class CreateApp:
         Author: Jack Pinkston
         """
         self.tabbar.tab.content.back()
-        self.update_addressbar_url()
+        self.tabbar.tab.content.loadFinished.connect(self.update_addressbar_url)
 
     def go_forward(self):
         """
@@ -66,7 +67,7 @@ class CreateApp:
         Author: Jack Pinkston
         """
         self.tabbar.tab.content.forward()
-        self.update_addressbar_url()
+        self.tabbar.tab.content.loadFinished.connect(self.update_addressbar_url)
 
     def refresh_page(self):
         """
@@ -74,7 +75,7 @@ class CreateApp:
         Author jack Pinkston
         """
         self.tabbar.tab.content.reload()
-        self.update_addressbar_url()
+        self.tabbar.tab.content.loadFinished.connect(self.update_addressbar_url)
 
     def browse_to(self):
         """
@@ -92,7 +93,7 @@ class CreateApp:
             new_url = text
 
         load_new_url.load(QUrl.fromUserInput(new_url))
-        self.update_addressbar_url()
+        self.tabbar.tab.content.loadFinished.connect(self.update_addressbar_url)
 
     def update_addressbar_url(self):
         """

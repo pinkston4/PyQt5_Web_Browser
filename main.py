@@ -7,7 +7,8 @@ class App(QFrame):
     """
     This is where the app is initialized
     only one method and it is the __init__ method
-    essiantially this module acts as the on off switch for the app
+    essentially this module acts as the on off switch for the app
+    Author: Jack Pinkston
     """
 
     def __init__(self):
